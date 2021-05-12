@@ -1,0 +1,22 @@
+{
+  "name": "api3-sovryn-hackathon-starter",
+  "version": "1.0.0",
+  "description": "sovryn hackathon dapp starter for airnode",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/api3dao/api3-sovryn-hackathon-starter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/api3dao/api3-sovryn-hackathon-starter/issues"
+  },
+  "homepage": "https://github.com/api3dao/api3-sovryn-hackathon-starter#readme",
+  "dependencies": {
+    "create-react-app": "^4.0.3"
+  }
+}
