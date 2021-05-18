@@ -114,7 +114,7 @@ npm run fund-master-wallet
 ```
 
 Your deployed Airnode will use these funds to make the transaction that will create the provider record on the chain you are operating on, and send the leftover ETH back to your address automatically.
-**You will have to wait ~1 minute for this to happen, otherwise the next step will fail.**
+<h1> **You will have to wait ~1 minute for this to happen, otherwise the next step will fail.** </h1>
 
 ### Make your endpoint publicly accessible
 
