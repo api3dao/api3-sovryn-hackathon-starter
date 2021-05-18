@@ -1,0 +1,21 @@
+# package directories
+/node_modules
+
+# ENV variables and secrets
+.env
+
+# IDE specific files
+.vscode
+
+# Log files
+*.log
+*.receipt.json
+
+# Test files
+coverage/
+coverage.json
+gas_report
+
+# Alternative package.json files for publishing
+# Will be removed in the future
+package.json_

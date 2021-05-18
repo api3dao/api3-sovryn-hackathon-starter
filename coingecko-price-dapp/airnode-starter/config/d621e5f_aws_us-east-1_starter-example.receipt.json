@@ -1,0 +1,13 @@
+{
+    "chainIds": [
+        "3"
+    ],
+    "cloudProvider": "aws",
+    "configId": "981d57c2-a004-4526-99da-1b04608fb463",
+    "masterWalletAddress": "0x78D318faDAE176210a0d7774FF9C0777D3e41b5E",
+    "providerId": "0xd621e5fca723a5f457c94983bc0bc0295328a8776850c15f8bf18f43afc7a38c",
+    "providerIdShort": "d621e5f",
+    "region": "us-east-1",
+    "stage": "starter-example",
+    "xpub": "xpub661MyMwAqRbcF4kCMjfN1tQ2RvTwKJVqPomcDpvA9a9AM64R24ZEg3A59Sf8CgXhUTu1jDDvBz9sfii4wfbgwTNfmBD9yX69j4zzdRftrh3"
+}

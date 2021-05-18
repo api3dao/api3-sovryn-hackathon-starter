@@ -1,0 +1,17 @@
+/node_modules
+/dist
+/.serverless
+/.build
+/.webpack
+
+# Test files
+coverage/
+
+# Config files
+*config.json
+*secrets.env
+*secrets.json
+*receipt.json
+
+# Packed package
+*.tgz

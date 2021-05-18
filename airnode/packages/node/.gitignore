@@ -1,0 +1,13 @@
+/node_modules
+/dist
+/.serverless
+/.build
+
+# Test files
+coverage/
+
+# Config files
+.env
+config.json
+**/.env
+**/config.json
