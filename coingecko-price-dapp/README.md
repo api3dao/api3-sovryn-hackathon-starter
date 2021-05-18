@@ -22,7 +22,11 @@ You are recommended to read the contents of the scripts as you run them, and rea
 First, you need to create a wallet and fund it.
 
 1. Clone this repo
-2. Run the following to install the dependencies
+2. 
+```sh
+cd airnode-starter
+```
+4. Run the following to install the dependencies
 ```sh
 npm install
 ```
