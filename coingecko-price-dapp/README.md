@@ -53,11 +53,8 @@ However, if you will be deploying your own Airnode, the provider endpoint must b
 
 9. Place them at `/config/.env`, similar to [`/config/example.env`](/config/example.env).
 Do not confuse this `.env` file with the one in the project root that keeps your mnemonic phrase and provider URL.
-<p>`AWS_ACCESS_KEY_ID=JSDYNDRUA1XAF2W3UGPA
-AWS_SECRET_KEY=q4JiOfPP4wQOuRj01/6/7RAodTAg6lFb99IoB4XH`</p>
-
-Follow the [docs](https://api3dao.github.io/api3-docs/pre-alpha/guides/provider/deploying-airnode.html#creating-cloud-credentials) to create your cloud credentials.
-
+`AWS_ACCESS_KEY_ID=JSDYNDRUA1XAF2W3UGPA`
+`AWS_SECRET_KEY=q4JiOfPP4wQOuRj01/6/7RAodTAg6lFb99IoB4XH`
 
 **Following these instructions to deploy an Airnode on AWS is [free](https://aws.amazon.com/free/) at the time this is being written.**
 
@@ -168,46 +165,8 @@ npm run fund-designated-wallet
 The requests that the client contract will make will be funded by this 0.1 ETH.
 Note that you may have to run `fund-designated-wallet` again if you make too many requests and use up this 0.1 ETH (very unlikely).
 
-### Make a request
-
-Run the following to make a request:
-```
-npm run make-request
-```
-which should be fulfilled by the Airnode and printed out on the terminal.
-Note that now that the price is on-chain, you can use it in your contract to implement any arbitrary logic.
-
-Try replacing the `coinId` value in [`make-request.js`](/scripts/make-request.js) from `"ethereum"` to `"bitcoin"` and make another request.
-You can see the API docs to find out which coin IDs are supported.
-
-## Conclusion
-
-You deployed an Airnode, made a request to it and received the response at the contract.
-If you want to learn more, see the following resources:
-
-- [API3 whitepaper](https://github.com/api3dao/api3-whitepaper) will give you a broad overview of the project
-- [Medium posts](https://api3dao.github.io/api3-docs/pages/medium.html) are a more digestible version of the whitepaper
-- [API3 docs](https://api3dao.github.io/api3-docs/pre-alpha/) will provide you with the theory of how Airnode and its protocol works
-- [@api3/airnode-admin](https://github.com/api3dao/airnode/tree/pre-alpha/packages/admin) lets you interact with the Airnode contract (to create a request, endorse a client, etc.) using a CLI tool
-- [Airnode client examples](https://github.com/api3dao/airnode-client-examples) demonstrate different request patterns that the Airnode protocol supports (for example, we used a full request in this starter project)
-
-## Taking down your Airnode
-
-It is very unlikely for you to forget to take down your Airnode because it is designed to be *set-and-forget*.
-When you are done with this project, go to `config/` as your working directory and use the command below where `$RECEIPT_FILENAME` is replaced with the name of your receipt file ending with `.receipt.json` (you can refer to our [Docker instructions](https://github.com/api3dao/airnode/blob/pre-alpha/Docker.md) for more information)
-
-```sh
-docker run -it --rm \
-  --env-file .env \
-  --env COMMAND=remove-with-receipt \
-  --env RECEIPT_FILENAME=$RECEIPT_FILENAME \
-  -v $(pwd):/airnode/out \
-  api3/airnode-deployer:pre-alpha
-```
-
-
-# Getting Started 
-cd into api3-integration-technical-task/airnode-starter.
+### Starting the Dapp
+cd into [airnode-starter](https://github.com/api3dao/api3-sovryn-hackathon-starter/tree/main/coingecko-price-dapp/airnode-starter).
 <br></br>
 run `npm install`
 <br></br>
@@ -215,7 +174,7 @@ run `npm run start-api` to start the api connected to Airnode
 <br></br>
 open a new terminal window
 <br></br>
-cd into api3-integration-technical-task.
+cd back into [coingecko-price-dapp](https://github.com/api3dao/api3-sovryn-hackathon-starter/tree/main/coingecko-price-dapp).
 <br></br>
 run `npm install`
 <br></br>
@@ -234,5 +193,22 @@ Then wait for the airnode price response.
 <br></br>
 
 ![](https://cdn.discordapp.com/attachments/776554233788760126/836015879807959040/unknown.png)
+
+## Taking down your Airnode
+
+It is very unlikely for you to forget to take down your Airnode because it is designed to be *set-and-forget*.
+When you are done with this project, go to `config/` as your working directory and use the command below where `$RECEIPT_FILENAME` is replaced with the name of your receipt file ending with `.receipt.json` (you can refer to our [Docker instructions](https://github.com/api3dao/airnode/blob/pre-alpha/Docker.md) for more information)
+
+```sh
+docker run -it --rm \
+  --env-file .env \
+  --env COMMAND=remove-with-receipt \
+  --env RECEIPT_FILENAME=$RECEIPT_FILENAME \
+  -v $(pwd):/airnode/out \
+  api3/airnode-deployer:pre-alpha
+```
+
+
+
 
 
