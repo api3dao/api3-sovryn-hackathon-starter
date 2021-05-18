@@ -1,0 +1,24 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "IAirnodeClient",
+  "sourceName": "@api3/airnode-protocol/contracts/interfaces/IAirnodeClient.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "airnodeAddress",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "_airnodeAddress",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
