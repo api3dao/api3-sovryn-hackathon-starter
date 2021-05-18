@@ -10,7 +10,7 @@ const cors = require('cors');
 async function getTokenPrice(coinId, setPrice, setLoading){
   if(coinId !== undefined){    
     setLoading(true);
-    let url = "http://localhost:3000/tokenPrice/" + coinId;
+    let url = "http://localhost:2999/tokenPrice/" + coinId;
     let res = await fetch(url);
     let response = await res.json();
     console.log(response)
@@ -34,10 +34,9 @@ function App() {
   const defaultOption = options[0];
   return (
     <div className="App">
-    
-      
       <div className="App-header">
-      <h1> Airnode Price Retrieval Tool </h1>
+      <img src="./logo.webp"></img>
+      <h2> Airnode Price Retrieval Tool </h2>
       <Dropdown options={options} onChange={function(event) {
         
         setCoinID(event.value);

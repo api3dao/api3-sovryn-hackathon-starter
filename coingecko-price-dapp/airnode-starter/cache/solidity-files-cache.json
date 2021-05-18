@@ -1,8 +1,8 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "/home/devpc/API3/airnode-starter/contracts/ExampleClient.sol": {
-      "lastModificationDate": 1619371532795,
+    "/home/devpc/API3/Hackathon/sovryn-hackathon-starter/api3-sovryn-hackathon-starter/coingecko-price-dapp/airnode-starter/contracts/ExampleClient.sol": {
+      "lastModificationDate": 1621348396562,
       "contentHash": "5bb315baa1196c38da0573ac29fbdb16",
       "sourceName": "contracts/ExampleClient.sol",
       "solcConfig": {
@@ -37,8 +37,8 @@
         "ExampleClient"
       ]
     },
-    "/home/devpc/API3/airnode-starter/node_modules/@api3/airnode-protocol/contracts/AirnodeClient.sol": {
-      "lastModificationDate": 1619371585971,
+    "/home/devpc/API3/Hackathon/sovryn-hackathon-starter/api3-sovryn-hackathon-starter/coingecko-price-dapp/airnode-starter/node_modules/@api3/airnode-protocol/contracts/AirnodeClient.sol": {
+      "lastModificationDate": 1621357411745,
       "contentHash": "a56ec770cec8fb49a5bef6cd8f14e86a",
       "sourceName": "@api3/airnode-protocol/contracts/AirnodeClient.sol",
       "solcConfig": {
@@ -74,8 +74,8 @@
         "AirnodeClient"
       ]
     },
-    "/home/devpc/API3/airnode-starter/node_modules/@api3/airnode-protocol/contracts/interfaces/IAirnodeClient.sol": {
-      "lastModificationDate": 1619371586007,
+    "/home/devpc/API3/Hackathon/sovryn-hackathon-starter/api3-sovryn-hackathon-starter/coingecko-price-dapp/airnode-starter/node_modules/@api3/airnode-protocol/contracts/interfaces/IAirnodeClient.sol": {
+      "lastModificationDate": 1621357411781,
       "contentHash": "f135973af81b7cbec4e45c40341dc076",
       "sourceName": "@api3/airnode-protocol/contracts/interfaces/IAirnodeClient.sol",
       "solcConfig": {
@@ -108,8 +108,8 @@
         "IAirnodeClient"
       ]
     },
-    "/home/devpc/API3/airnode-starter/node_modules/@api3/airnode-protocol/contracts/interfaces/IAirnode.sol": {
-      "lastModificationDate": 1619371585999,
+    "/home/devpc/API3/Hackathon/sovryn-hackathon-starter/api3-sovryn-hackathon-starter/coingecko-price-dapp/airnode-starter/node_modules/@api3/airnode-protocol/contracts/interfaces/IAirnode.sol": {
+      "lastModificationDate": 1621357411777,
       "contentHash": "f0f47e332d66579e08ac885e6dd40bc0",
       "sourceName": "@api3/airnode-protocol/contracts/interfaces/IAirnode.sol",
       "solcConfig": {
@@ -145,8 +145,8 @@
         "IAirnode"
       ]
     },
-    "/home/devpc/API3/airnode-starter/node_modules/@api3/airnode-protocol/contracts/interfaces/IEndpointStore.sol": {
-      "lastModificationDate": 1619371586031,
+    "/home/devpc/API3/Hackathon/sovryn-hackathon-starter/api3-sovryn-hackathon-starter/coingecko-price-dapp/airnode-starter/node_modules/@api3/airnode-protocol/contracts/interfaces/IEndpointStore.sol": {
+      "lastModificationDate": 1621357411961,
       "contentHash": "2271ca8376ebb96b707089f4c9a00388",
       "sourceName": "@api3/airnode-protocol/contracts/interfaces/IEndpointStore.sol",
       "solcConfig": {
@@ -181,8 +181,8 @@
         "IEndpointStore"
       ]
     },
-    "/home/devpc/API3/airnode-starter/node_modules/@api3/airnode-protocol/contracts/interfaces/ITemplateStore.sol": {
-      "lastModificationDate": 1619371586047,
+    "/home/devpc/API3/Hackathon/sovryn-hackathon-starter/api3-sovryn-hackathon-starter/coingecko-price-dapp/airnode-starter/node_modules/@api3/airnode-protocol/contracts/interfaces/ITemplateStore.sol": {
+      "lastModificationDate": 1621357411993,
       "contentHash": "d43456691ea96bea75083bae503175cc",
       "sourceName": "@api3/airnode-protocol/contracts/interfaces/ITemplateStore.sol",
       "solcConfig": {
@@ -215,8 +215,8 @@
         "ITemplateStore"
       ]
     },
-    "/home/devpc/API3/airnode-starter/node_modules/@api3/airnode-protocol/contracts/interfaces/IProviderStore.sol": {
-      "lastModificationDate": 1619371586039,
+    "/home/devpc/API3/Hackathon/sovryn-hackathon-starter/api3-sovryn-hackathon-starter/coingecko-price-dapp/airnode-starter/node_modules/@api3/airnode-protocol/contracts/interfaces/IProviderStore.sol": {
+      "lastModificationDate": 1621357411969,
       "contentHash": "96932988c5bd05a9bfcfddafaf078a39",
       "sourceName": "@api3/airnode-protocol/contracts/interfaces/IProviderStore.sol",
       "solcConfig": {
@@ -251,8 +251,8 @@
         "IProviderStore"
       ]
     },
-    "/home/devpc/API3/airnode-starter/node_modules/@api3/airnode-protocol/contracts/interfaces/IRequesterStore.sol": {
-      "lastModificationDate": 1619371586043,
+    "/home/devpc/API3/Hackathon/sovryn-hackathon-starter/api3-sovryn-hackathon-starter/coingecko-price-dapp/airnode-starter/node_modules/@api3/airnode-protocol/contracts/interfaces/IRequesterStore.sol": {
+      "lastModificationDate": 1621357411969,
       "contentHash": "0b8ffb58cc7a5461df2eec764fd0aca9",
       "sourceName": "@api3/airnode-protocol/contracts/interfaces/IRequesterStore.sol",
       "solcConfig": {
