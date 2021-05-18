@@ -168,17 +168,17 @@ Note that you may have to run `fund-designated-wallet` again if you make too man
 ### Starting the Dapp
 cd into [airnode-starter](https://github.com/api3dao/api3-sovryn-hackathon-starter/tree/main/coingecko-price-dapp/airnode-starter).
 <br></br>
-run `npm install`
+```sh npm install```
 <br></br>
-run `npm run start-api` to start the api connected to Airnode
+run ```sh npm run start-api``` to start the api connected to Airnode
 <br></br>
 open a new terminal window
 <br></br>
 cd back into [coingecko-price-dapp](https://github.com/api3dao/api3-sovryn-hackathon-starter/tree/main/coingecko-price-dapp).
 <br></br>
-run `npm install`
+run ```sh npm install```
 <br></br>
-run `npm start` to start the dApp
+run ```sh npm start``` to start the dApp
 
 <br></br>
 <br></br>
