@@ -218,7 +218,7 @@ Then wait for the airnode price response.
 
 ## Successful airnode call
 
-![](https://cdn.discordapp.com/attachments/776554233788760126/836015879807959040/unknown.png)
+![](https://cdn.discordapp.com/attachments/776554233788760126/844293238034792518/unknown.png)
 
 ## Taking down your Airnode
 
