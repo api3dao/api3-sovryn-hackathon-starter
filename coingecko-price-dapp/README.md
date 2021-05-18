@@ -22,6 +22,9 @@ You are recommended to read the contents of the scripts as you run them, and rea
 First, you need to create a wallet and fund it.
 
 1. Clone this repo
+```sh
+cd airnode-starter
+```
 2. Run the following to install the dependencies
 ```sh
 npm install
@@ -49,10 +52,12 @@ Note that you can use any other provider or your own node.
 However, if you will be deploying your own Airnode, the provider endpoint must be publicly accessible (i.e., `127.0.0.1:8545` will not work).
 
 *(You only need cloud credentials if you will not be skipping Step 1.)*
+3.Follow this [video](https://www.youtube.com/watch?v=KngM5bfpttA) and create your free AWS credentials.
 
-Follow the [docs](https://api3dao.github.io/api3-docs/pre-alpha/guides/provider/deploying-airnode.html#creating-cloud-credentials) to create your cloud credentials.
-Place them at `/config/.env`, similar to [`/config/example.env`](/config/example.env).
+4. Place them at `/config/.env`, similar to [`/config/example.env`](/config/example.env).
 Do not confuse this `.env` file with the one in the project root that keeps your mnemonic phrase and provider URL.
+`AWS_ACCESS_KEY_ID=JSDYNDRUA1XAF2W3UGPA`
+`AWS_SECRET_KEY=q4JiOfPP4wQOuRj01/6/7RAodTAg6lFb99IoB4XH`
 
 **Following these instructions to deploy an Airnode on AWS is [free](https://aws.amazon.com/free/) at the time this is being written.**
 
@@ -60,7 +65,7 @@ Do not confuse this `.env` file with the one in the project root that keeps your
 
 Normally, you would need to do two things before you deploy an Airnode:
 1. [Specify the API integration](https://api3dao.github.io/api3-docs/pre-alpha/guides/provider/api-integration.html)
-1. [Configure your Airnode](https://api3dao.github.io/api3-docs/pre-alpha/guides/provider/configuring-airnode.html)
+2. [Configure your Airnode](https://api3dao.github.io/api3-docs/pre-alpha/guides/provider/configuring-airnode.html)
 
 For this project, we specified a minimal integration to the popular and free [CoinGecko API](https://www.coingecko.com/en/api), and prepared the configuration files.
 We only integrated a single API operation, `GET` for `/coins/{id}`, which you can see below.
@@ -108,7 +113,7 @@ npm run fund-master-wallet
 ```
 
 Your deployed Airnode will use these funds to make the transaction that will create the provider record on the chain you are operating on, and send the leftover ETH back to your address automatically.
-**You will have to wait ~1 minute for this to happen, otherwise the next step will fail.**
+<h1> **You will have to wait ~1 minute for this to happen, otherwise the next step will fail.** </h1>
 
 ### Make your endpoint publicly accessible
 
@@ -118,6 +123,15 @@ Run the following to set your endpoint's [authorizers](https://api3dao.github.io
 ```sh
 npm run update-authorizers
 ```
+
+### If you get ` "cannot estimate gas" `
+
+you probably haven't waited long enough. Try again in ~1 minute, and run:
+
+  ```sh
+  npm run update-authorizers
+  ```
+
 
 ## Step 2: Make a request
 
@@ -163,28 +177,48 @@ npm run fund-designated-wallet
 The requests that the client contract will make will be funded by this 0.1 ETH.
 Note that you may have to run `fund-designated-wallet` again if you make too many requests and use up this 0.1 ETH (very unlikely).
 
-### Make a request
+## Airnode should now be ready to make requests
 
-Run the following to make a request:
+### Starting the Dapp
+cd into [airnode-starter](https://github.com/api3dao/api3-sovryn-hackathon-starter/tree/main/coingecko-price-dapp/airnode-starter).
+<br></br>
+```sh
+npm install
 ```
-npm run make-request
+<br></br> 
+```sh 
+npm run start-api
 ```
-which should be fulfilled by the Airnode and printed out on the terminal.
-Note that now that the price is on-chain, you can use it in your contract to implement any arbitrary logic.
+to start the api connected to Airnode
+<br></br>
+open a new terminal window
+<br></br>
+cd back into [coingecko-price-dapp](https://github.com/api3dao/api3-sovryn-hackathon-starter/tree/main/coingecko-price-dapp).
 
-Try replacing the `coinId` value in [`make-request.js`](/scripts/make-request.js) from `"ethereum"` to `"bitcoin"` and make another request.
-You can see the API docs to find out which coin IDs are supported.
+run 
+```sh 
+npm install
+```
 
-## Conclusion
+run 
+```sh 
+npm start
+``` 
+to start the dApp
 
-You deployed an Airnode, made a request to it and received the response at the contract.
-If you want to learn more, see the following resources:
+# How To Use The dApp
 
-- [API3 whitepaper](https://github.com/api3dao/api3-whitepaper) will give you a broad overview of the project
-- [Medium posts](https://api3dao.github.io/api3-docs/pages/medium.html) are a more digestible version of the whitepaper
-- [API3 docs](https://api3dao.github.io/api3-docs/pre-alpha/) will provide you with the theory of how Airnode and its protocol works
-- [@api3/airnode-admin](https://github.com/api3dao/airnode/tree/pre-alpha/packages/admin) lets you interact with the Airnode contract (to create a request, endorse a client, etc.) using a CLI tool
-- [Airnode client examples](https://github.com/api3dao/airnode-client-examples) demonstrate different request patterns that the Airnode protocol supports (for example, we used a full request in this starter project)
+Select A token from the dropdown
+<br></br>
+Then wait for the airnode price response.
+<br></br>
+## You can keep track of the request in the terminal where you started the api
+
+![](https://cdn.discordapp.com/attachments/776554233788760126/844273257888743445/unknown.png)
+
+## Successful airnode call
+
+![](https://cdn.discordapp.com/attachments/776554233788760126/836015879807959040/unknown.png)
 
 ## Taking down your Airnode
 
@@ -201,33 +235,6 @@ docker run -it --rm \
 ```
 
 
-# Getting Started 
-cd into api3-integration-technical-task/airnode-starter.
-<br></br>
-run `npm install`
-<br></br>
-run `npm run start-api` to start the api connected to Airnode
-<br></br>
-open a new terminal window
-<br></br>
-cd into api3-integration-technical-task.
-<br></br>
-run `npm install`
-<br></br>
-run `npm start` to start the dApp
 
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-# How To Use The dApp
-
-Select A token from the dropdown
-<br></br>
-Then wait for the airnode price response.
-<br></br>
-
-![](https://cdn.discordapp.com/attachments/776554233788760126/836015879807959040/unknown.png)
 
 
