@@ -127,7 +127,7 @@ npm run update-authorizers
 
 ### If you get ` "cannot estimate gas" `
 
-you probably haven't waited long enough. Try again in ~1 minute.
+you probably haven't waited long enough. Try again in ~1 minute, and run:
 
   ```sh
   npm run update-authorizers
@@ -177,6 +177,8 @@ npm run fund-designated-wallet
 
 The requests that the client contract will make will be funded by this 0.1 ETH.
 Note that you may have to run `fund-designated-wallet` again if you make too many requests and use up this 0.1 ETH (very unlikely).
+
+## Airnode should now be ready to make requests
 
 ### Starting the Dapp
 cd into [airnode-starter](https://github.com/api3dao/api3-sovryn-hackathon-starter/tree/main/coingecko-price-dapp/airnode-starter).
