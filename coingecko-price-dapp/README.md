@@ -49,10 +49,15 @@ Note that you can use any other provider or your own node.
 However, if you will be deploying your own Airnode, the provider endpoint must be publicly accessible (i.e., `127.0.0.1:8545` will not work).
 
 *(You only need cloud credentials if you will not be skipping Step 1.)*
+8.Follow this [video](https://www.youtube.com/watch?v=KngM5bfpttA) and create your free AWS credentials.
+
+9. Place them at `/config/.env`, similar to [`/config/example.env`](/config/example.env).
+Do not confuse this `.env` file with the one in the project root that keeps your mnemonic phrase and provider URL.
+<p>`AWS_ACCESS_KEY_ID=JSDYNDRUA1XAF2W3UGPA
+AWS_SECRET_KEY=q4JiOfPP4wQOuRj01/6/7RAodTAg6lFb99IoB4XH`</p>
 
 Follow the [docs](https://api3dao.github.io/api3-docs/pre-alpha/guides/provider/deploying-airnode.html#creating-cloud-credentials) to create your cloud credentials.
-Place them at `/config/.env`, similar to [`/config/example.env`](/config/example.env).
-Do not confuse this `.env` file with the one in the project root that keeps your mnemonic phrase and provider URL.
+
 
 **Following these instructions to deploy an Airnode on AWS is [free](https://aws.amazon.com/free/) at the time this is being written.**
 
