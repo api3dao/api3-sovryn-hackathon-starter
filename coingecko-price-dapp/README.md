@@ -212,11 +212,11 @@ Select A token from the dropdown
 <br></br>
 Then wait for the airnode price response.
 <br></br>
-##You can keep track of the request in the terminal where you started the api
+## You can keep track of the request in the terminal where you started the api
 
 ![](https://cdn.discordapp.com/attachments/776554233788760126/844273257888743445/unknown.png)
 
-##Successful airnode call
+## Successful airnode call
 
 ![](https://cdn.discordapp.com/attachments/776554233788760126/836015879807959040/unknown.png)
 
