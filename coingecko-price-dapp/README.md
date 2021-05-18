@@ -195,29 +195,26 @@ to start the api connected to Airnode
 open a new terminal window
 <br></br>
 cd back into [coingecko-price-dapp](https://github.com/api3dao/api3-sovryn-hackathon-starter/tree/main/coingecko-price-dapp).
-<br></br>
+
 run 
 ```sh 
 npm install
 ```
-<br></br>
+
 run 
 ```sh 
 npm start
 ``` 
 to start the dApp
 
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
 # How To Use The dApp
 
 Select A token from the dropdown
 <br></br>
 Then wait for the airnode price response.
 <br></br>
+Keep track of the progress of the request in the terminal of the api
+![](https://cdn.discordapp.com/attachments/776554233788760126/844273257888743445/unknown.png)
 
 ![](https://cdn.discordapp.com/attachments/776554233788760126/836015879807959040/unknown.png)
 
