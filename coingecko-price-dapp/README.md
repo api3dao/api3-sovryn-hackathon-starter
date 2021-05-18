@@ -22,11 +22,10 @@ You are recommended to read the contents of the scripts as you run them, and rea
 First, you need to create a wallet and fund it.
 
 1. Clone this repo
-2. 
 ```sh
 cd airnode-starter
 ```
-4. Run the following to install the dependencies
+2. Run the following to install the dependencies
 ```sh
 npm install
 ```
@@ -53,9 +52,9 @@ Note that you can use any other provider or your own node.
 However, if you will be deploying your own Airnode, the provider endpoint must be publicly accessible (i.e., `127.0.0.1:8545` will not work).
 
 *(You only need cloud credentials if you will not be skipping Step 1.)*
-8.Follow this [video](https://www.youtube.com/watch?v=KngM5bfpttA) and create your free AWS credentials.
+3.Follow this [video](https://www.youtube.com/watch?v=KngM5bfpttA) and create your free AWS credentials.
 
-9. Place them at `/config/.env`, similar to [`/config/example.env`](/config/example.env).
+4. Place them at `/config/.env`, similar to [`/config/example.env`](/config/example.env).
 Do not confuse this `.env` file with the one in the project root that keeps your mnemonic phrase and provider URL.
 `AWS_ACCESS_KEY_ID=JSDYNDRUA1XAF2W3UGPA`
 `AWS_SECRET_KEY=q4JiOfPP4wQOuRj01/6/7RAodTAg6lFb99IoB4XH`
@@ -66,7 +65,7 @@ Do not confuse this `.env` file with the one in the project root that keeps your
 
 Normally, you would need to do two things before you deploy an Airnode:
 1. [Specify the API integration](https://api3dao.github.io/api3-docs/pre-alpha/guides/provider/api-integration.html)
-1. [Configure your Airnode](https://api3dao.github.io/api3-docs/pre-alpha/guides/provider/configuring-airnode.html)
+2. [Configure your Airnode](https://api3dao.github.io/api3-docs/pre-alpha/guides/provider/configuring-airnode.html)
 
 For this project, we specified a minimal integration to the popular and free [CoinGecko API](https://www.coingecko.com/en/api), and prepared the configuration files.
 We only integrated a single API operation, `GET` for `/coins/{id}`, which you can see below.
@@ -213,9 +212,9 @@ Select A token from the dropdown
 <br></br>
 Then wait for the airnode price response.
 <br></br>
-Keep track of the progress of the request in the terminal of the api
+##You can keep track of the request in the terminal where you started the api
 ![](https://cdn.discordapp.com/attachments/776554233788760126/844273257888743445/unknown.png)
-
+##Successful airnode call
 ![](https://cdn.discordapp.com/attachments/776554233788760126/836015879807959040/unknown.png)
 
 ## Taking down your Airnode
