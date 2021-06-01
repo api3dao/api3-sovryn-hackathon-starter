@@ -66,7 +66,7 @@ contract PriceFeed {
     }
     
     function isValidPrice(address tokenAddress) public view returns (bool){
-        if (block.number >= priceBlock] + blockBuffer){
+        if (block.number >= priceBlock + blockBuffer){
             return false;
         }
         else {
