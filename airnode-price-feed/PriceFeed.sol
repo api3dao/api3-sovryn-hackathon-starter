@@ -52,13 +52,14 @@ contract PriceFeed {
     function requestOraclePriceFulfillment() public {
         bytes32 requestId = oracle.makeRequest(providerId, endpointId, requesterInd, designatedWallet, parameters);
         requests[requestId] = block.number;    
+        //emit event with requestId here
     }
     
     function requestOraclePriceUpdate(bytes32 requestId) public {
         int256 newPrice = oracle.returnValue(requestId);
         price = newPrice;
         priceBlock = requests[requestId];
-        
+        //emit event here
     }
     
     function getOraclePrice() public view returns (int256){
