@@ -54,7 +54,7 @@ contract PriceFeed {
         requests[requestId] = block.number;    
         //emit event with requestId here
     }
-    
+    // Find a way to make old requests invalid for re updating
     function requestOraclePriceUpdate(bytes32 requestId) public {
         int256 newPrice = oracle.returnValue(requestId);
         price = newPrice;
