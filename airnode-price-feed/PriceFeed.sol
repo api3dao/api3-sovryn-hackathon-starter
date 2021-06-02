@@ -67,6 +67,7 @@ contract PriceFeed {
     }
     
     function isValidPrice() public view returns (bool){
+        //this should use safeMath
         if (block.number >= priceBlock + blockBuffer){
             return false;
         }
