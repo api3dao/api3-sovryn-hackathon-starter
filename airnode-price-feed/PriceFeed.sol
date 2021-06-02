@@ -23,9 +23,9 @@ contract PriceFeed {
     address private immutable designatedWallet;
     uint256 private immutable blockBuffer;
     OracleClient private oracle;
-    bytes32 assetBytes;
-    bytes32 nameBytes;
-    bytes32 paramBytes = bytes32("1b");
+    bytes32 private immutable assetBytes;
+    bytes32 private immutable nameBytes;
+    bytes32 private immutable paramBytes = bytes32("1b");
     uint256 public priceBlock;
     int256 public price;
     mapping(bytes32 => uint256) public requests;
@@ -61,11 +61,11 @@ contract PriceFeed {
         
     }
     
-    function currentOnChainOraclePrice(address tokenAddress) public view returns (int256){
+    function getOraclePrice() public view returns (int256){
         return price;
     }
     
-    function isValidPrice(address tokenAddress) public view returns (bool){
+    function isValidPrice() public view returns (bool){
         if (block.number >= priceBlock + blockBuffer){
             return false;
         }
