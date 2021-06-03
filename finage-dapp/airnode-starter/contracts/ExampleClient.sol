@@ -20,6 +20,7 @@ contract ExampleClient is AirnodeClient {
         bytes calldata parameters
         )
         external
+        returns (bytes32)
     {
         bytes32 requestId = airnode.makeFullRequest(
             providerId,
@@ -31,6 +32,7 @@ contract ExampleClient is AirnodeClient {
             parameters
             );
         incomingFulfillments[requestId] = true;
+        return requestId;
     }
     function fulfill(
         bytes32 requestId,
