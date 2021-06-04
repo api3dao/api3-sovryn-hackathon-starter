@@ -16,12 +16,10 @@ interface OracleClient{
 }
 
 contract PriceFeed {
-    
     event PriceRequested(
         bytes32 requestId,
         uint256 blockNumber
     );
-    
     event PriceUpdated(
         bytes32 requestId,
         uint256 blockNumber,
@@ -34,13 +32,16 @@ contract PriceFeed {
     address public immutable designatedWallet;
     uint256 public immutable blockBuffer;
     OracleClient public oracle;
-    bytes32 public assetBytes;
-    bytes32 public nameBytes;
     bytes32 public constant typeBytes = bytes32("1b");
     uint256 public priceBlock;
     int256 public price;
     mapping(bytes32 => uint256) public requests;
-    bytes public parameters;
+    // looking to make the asset and name paramaters inputs to constructor
+    bytes public parameters = abi.encode(
+        typeBytes,
+        bytes32("symbol"), 
+        bytes32("TSLA")
+        );
     
     constructor(address clientAddress, uint256 _blockBuffer, address _designatedWallet, uint256 _requesterInd, bytes32 _endpointId, bytes32 _providerId) public payable {
         oracle = OracleClient(clientAddress);
@@ -52,23 +53,18 @@ contract PriceFeed {
     }
     
     function requestOraclePriceFulfillment() public {
-        bytes memory parameters = abi.encode(
-        typeBytes,
-        bytes32("symbol"), 
-        bytes32("TSLA")
-        );
         bytes32 requestId = oracle.makeRequest(providerId, endpointId, requesterInd, designatedWallet, parameters);
         uint256 currentBlock = block.number;
         requests[requestId] = currentBlock;
         emit PriceRequested(requestId,currentBlock);
     }
-
+    //can some of the logic here move to client contract
     function requestOraclePriceUpdate(bytes32 requestId) public {
         uint256 currentBlock = block.number;
         require(requests[requestId] >= currentBlock - blockBuffer, "expired request");
         int256 newPrice = oracle.fulfilledData(requestId);
-        // this assumes the price did not actually go to zero as a temporary solution
-        require(newPrice > 0, "unfulfilled or error response");
+        // temporary solution, assumes price doesnt actually go to zero
+        require(newPrice > 0, "unfulfilled request or bad response");
         price = newPrice;
         priceBlock = requests[requestId];
         emit PriceUpdated(requestId,currentBlock, price);
