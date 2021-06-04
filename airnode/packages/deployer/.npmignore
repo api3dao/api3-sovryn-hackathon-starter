@@ -1,7 +1,0 @@
-/src/
-/bin/
-/.webpack
-webpack*
-
-*.json
-*.tgz

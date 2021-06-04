@@ -7,7 +7,7 @@ const parameters = require('../src/parameters');
 const cors = require('cors');
 
 
-async function getTokenPrice(coinId) {
+async function getTokenPrice(stockId) {
   //const coinId = 'chainlink';
   const wallet = await evm.getWallet();
   const exampleClient = new ethers.Contract(
@@ -24,7 +24,7 @@ async function getTokenPrice(coinId) {
       parameters.endpointId,
       util.readFromLogJson('Requester index'),
       util.readFromLogJson('Designated wallet address'),
-      airnodeAbi.encode([{ name: 'coinId', type: 'bytes32', value: coinId }])
+      airnodeAbi.encode([{ name: 'symbol', type: 'bytes32', value: stockId }])
     );
     return new Promise((resolve) =>
       wallet.provider.once(receipt.hash, (tx) => {
@@ -44,10 +44,10 @@ async function getTokenPrice(coinId) {
   await fulfilled(requestId);
   console.log('Request fulfilled');
   let data = await exampleClient.fulfilledData(requestId) 
-  console.log(`${coinId} price is ${(data) / 1e6} USD`);
+  console.log(`${stockId} price is ${(data)} USD`);
   return {
-      coinId: coinId,
-      price: data/1e6
+      coinId: stockId,
+      price: data
   }
 }
 
