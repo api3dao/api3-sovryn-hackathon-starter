@@ -13,10 +13,18 @@ interface OracleClient{
         external 
         returns (bytes32);
     function fulfilledData(bytes32 requestId) external returns (int256);
-        
 }
 
 contract PriceFeed {
+    event PriceRequested(
+        bytes32 requestId,
+        uint256 blockNumber
+    );
+    event PriceUpdated(
+        bytes32 requestId,
+        uint256 blockNumber,
+        int256 newPrice
+    );
    
     bytes32 public immutable providerId;
     bytes32 public immutable endpointId;
@@ -24,50 +32,42 @@ contract PriceFeed {
     address public immutable designatedWallet;
     uint256 public immutable blockBuffer;
     OracleClient public oracle;
-    bytes32 public assetBytes;
-    bytes32 public nameBytes;
     bytes32 public constant typeBytes = bytes32("1b");
     uint256 public priceBlock;
     int256 public price;
     mapping(bytes32 => uint256) public requests;
-    bytes public parameters;
+    // looking to make the asset and name paramaters inputs to constructor
+    bytes public parameters = abi.encode(
+        typeBytes,
+        bytes32("symbol"), 
+        bytes32("TSLA")
+        );
     
-    
-    constructor(address clientAddress, uint256 _blockBuffer, address _designatedWallet, uint256 _requesterInd, bytes32 _endpointId, bytes32 _providerId, string memory _assetBytes, string memory _nameBytes) public payable {
+    constructor(address clientAddress, uint256 _blockBuffer, address _designatedWallet, uint256 _requesterInd, bytes32 _endpointId, bytes32 _providerId) public payable {
         oracle = OracleClient(clientAddress);
         blockBuffer = _blockBuffer;
         designatedWallet = _designatedWallet;
         requesterInd = _requesterInd;
         endpointId = _endpointId;
         providerId = _providerId;
-        assetBytes = keccak256(abi.encodePacked(_assetBytes));
-        nameBytes = keccak256(abi.encodePacked(_nameBytes));
-        //parameters = abi.encode(
-        //typeBytes,
-        //nameBytes, 
-        //assetBytes
-        //);
     }
     
     function requestOraclePriceFulfillment() public {
-        bytes memory parameters = abi.encode(
-        typeBytes,
-        bytes32("symbol"), 
-        bytes32("TSLA")
-        );
         bytes32 requestId = oracle.makeRequest(providerId, endpointId, requesterInd, designatedWallet, parameters);
-        requests[requestId] = block.number;    
-        //emit event with requestId here and block
+        uint256 currentBlock = block.number;
+        requests[requestId] = currentBlock;
+        emit PriceRequested(requestId,currentBlock);
     }
-
+    //can some of the logic here move to client contract
     function requestOraclePriceUpdate(bytes32 requestId) public {
-        require(requests[requestId] >= block.number - blockBuffer, "expired request");
+        uint256 currentBlock = block.number;
+        require(requests[requestId] >= currentBlock - blockBuffer, "expired request");
         int256 newPrice = oracle.fulfilledData(requestId);
-        // not perfect fulfillment check
-        require(newPrice > 0, "unfulfilled request");
+        // temporary solution, assumes price doesnt actually go to zero
+        require(newPrice > 0, "unfulfilled request or bad response");
         price = newPrice;
         priceBlock = requests[requestId];
-        //emit event here with price and block.number
+        emit PriceUpdated(requestId,currentBlock, price);
     }
     
     function getOraclePrice() public view returns (int256){
