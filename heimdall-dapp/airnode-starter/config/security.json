@@ -3,7 +3,7 @@
     "finageois": [
       {
         "securitySchemeName": "finagekey",
-        "value": "API_KEYCGQNJX44KC2TSSDIS5UQP02FUFFQO18H"
+        "value": "{INSERT_API_KEY}"
       }
     ]
   },
