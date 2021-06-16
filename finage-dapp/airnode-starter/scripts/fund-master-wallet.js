@@ -8,7 +8,7 @@ async function main() {
   if (!masterWalletAddress) {
     throw new Error('Could not read the master wallet address from the deployment receipt');
   }
-  const amount = '0.001'; // ETH
+  const amount = '0.005'; // ETH
   const wallet = await evm.getWallet();
   const txReceipt = await wallet.sendTransaction({
     to: masterWalletAddress,

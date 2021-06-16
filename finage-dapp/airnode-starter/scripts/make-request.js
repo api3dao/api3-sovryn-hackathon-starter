@@ -6,7 +6,9 @@ const util = require('../src/util');
 const parameters = require('../src/parameters');
 
 async function main() {
-  const coinId = 'AAPL';
+  const stockId = 'AAPL';
+  const coinId = 'btcusd';
+  const forexId = 'gbpusd';
   const wallet = await evm.getWallet();
   const exampleClient = new ethers.Contract(
     util.readFromLogJson('ExampleClient address'),
@@ -17,12 +19,15 @@ async function main() {
 
   console.log('Making the request...');
   async function makeRequest() {
+    let date = "2021-06-15"
     const receipt = await exampleClient.makeRequest(
       parameters.providerId,
       parameters.endpointId,
       util.readFromLogJson('Requester index'),
       util.readFromLogJson('Designated wallet address'),
-      airnodeAbi.encode([{ name: 'symbol', type: 'bytes32', value: coinId }])
+      // airnodeAbi.encode([{ name: 'symbol', type: 'bytes32', value: forexId },{name: 'date', type: 'bytes32', value: date}])
+      // airnodeAbi.encode([{ name: 'symbol', type: 'bytes32', value: coinId }])
+      airnodeAbi.encode([{ name: 'symbol', type: 'bytes32', value: forexId }])
     );
     return new Promise((resolve) =>
       wallet.provider.once(receipt.hash, (tx) => {

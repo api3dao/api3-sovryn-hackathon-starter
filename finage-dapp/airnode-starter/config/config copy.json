@@ -2,7 +2,7 @@
   "ois": [
     {
       "oisFormat": "1.0.0",
-      "title": "finageois",
+      "title": "Finage",
       "version": "1.0.0",
       "apiSpecifications": {
         "servers": [
@@ -510,15 +510,15 @@
         },
         "components": {
           "securitySchemes": {
-            "finagekey": {
+            "finageSecurityScheme": {
+              "in": "query",
               "type": "apiKey",
-              "name": "apikey",
-              "in": "query"
+              "name": "apikey"
             }
           }
         },
         "security": {
-          "finagekey": []
+          "finageSecurityScheme": []
         }
       },
       "endpoints": [
@@ -528,7 +528,7 @@
             "method": "get",
             "path": "/last/stock/{symbol}"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "int256"
@@ -559,7 +559,7 @@
             "method": "get",
             "path": "/last/trade/stock/{symbol}"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "int256"
@@ -590,7 +590,7 @@
             "method": "get",
             "path": "/history/stock/open-close"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "int256"
@@ -628,7 +628,7 @@
             "method": "get",
             "path": "/history/stock/all"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "int256"
@@ -688,7 +688,7 @@
             "method": "get",
             "path": "/agg/stock/{symbol}/{multiply}/{time}/{from}/{to}"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "int256"
@@ -762,7 +762,7 @@
             "method": "get",
             "path": "/last/forex/{symbol}"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "int256"
@@ -780,9 +780,7 @@
               "fixed": "100000000000000000"
             }
           ],
-          "fixedOperationParameters": [
-            
-          ],
+          "fixedOperationParameters": [],
           "parameters": [
             {
               "name": "symbol",
@@ -799,7 +797,7 @@
             "method": "get",
             "path": "/history/ticks/forex/{symbol}/{date}"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "int256"
@@ -849,7 +847,7 @@
             "method": "get",
             "path": "/agg/forex/{symbol}/{multiply}/{time}/{from}/{to}"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "int256"
@@ -870,7 +868,7 @@
                 "name": "limit"
               },
               "value": "1"
-            }             
+            }
           ],
           "parameters": [
             {
@@ -916,14 +914,14 @@
             "method": "get",
             "path": "/last/crypto/{symbol}"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "int256"
             },
             {
               "name": "_path",
-              "fixed": "price"
+              "fixed": "value"
             },
             {
               "name": "_times",
@@ -947,7 +945,7 @@
             "method": "get",
             "path": "/last/crypto/detailed/{symbol}"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "int256"
@@ -978,7 +976,7 @@
             "method": "get",
             "path": "/agg/crypto/{symbol}/{multiply}/{time}/{from}/{to}"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "int256"
@@ -999,7 +997,7 @@
                 "name": "limit"
               },
               "value": "1"
-            }          
+            }
           ],
           "parameters": [
             {
@@ -1038,7 +1036,7 @@
             "method": "get",
             "path": "/depth/crypto/{symbol}"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "bytes32"
@@ -1065,7 +1063,7 @@
             "method": "get",
             "path": "/history/crypto/depth/{symbol}/{from}/{to}"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "int256"
@@ -1086,7 +1084,7 @@
                 "name": "limit"
               },
               "value": "1"
-            }   
+            }
           ],
           "parameters": [
             {
@@ -1118,7 +1116,7 @@
             "method": "get",
             "path": "/news/market/{symbol}"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "bytes32"
@@ -1128,8 +1126,7 @@
               "fixed": "url"
             }
           ],
-          "fixedOperationParameters": [
-          ],
+          "fixedOperationParameters": [],
           "parameters": [
             {
               "name": "symbol",
@@ -1146,7 +1143,7 @@
             "method": "get",
             "path": "/economic-calendar"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "bytes32"
@@ -1180,7 +1177,7 @@
             "method": "get",
             "path": "/cash-flow-statement/{symbol}"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "int256"
@@ -1201,7 +1198,7 @@
                 "name": "limit"
               },
               "value": "1"
-            }   
+            }
           ],
           "parameters": [
             {
@@ -1226,7 +1223,7 @@
             "method": "get",
             "path": "/balance-sheet-statements/{symbol}"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "int256"
@@ -1247,7 +1244,7 @@
                 "name": "limit"
               },
               "value": "1"
-            }   
+            }
           ],
           "parameters": [
             {
@@ -1272,7 +1269,7 @@
             "method": "get",
             "path": "/income-statement/{symbol}"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "int256"
@@ -1293,7 +1290,7 @@
                 "name": "limit"
               },
               "value": "1"
-            }   
+            }
           ],
           "parameters": [
             {
@@ -1318,7 +1315,7 @@
             "method": "get",
             "path": "/detail/stock/{symbol}"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "int256"
@@ -1349,7 +1346,7 @@
             "method": "get",
             "path": "/funds/institutional-holder/{symbol}"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "int256"
@@ -1380,7 +1377,7 @@
             "method": "get",
             "path": "/funds/mutual-fund-holder/{symbol}"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "int256"
@@ -1411,7 +1408,7 @@
             "method": "get",
             "path": "/funds/etf-holder/{symbol}"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "int256"
@@ -1442,7 +1439,7 @@
             "method": "get",
             "path": "/funds/etf-sector-weightings/{symbol}"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "bytes32"
@@ -1469,7 +1466,7 @@
             "method": "get",
             "path": "/funds/rss-feed"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "bytes32"
@@ -1488,7 +1485,7 @@
             "method": "get",
             "path": "/technical-indicator/{type}/{time}/{symbol}"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "bytes32"
@@ -1536,7 +1533,7 @@
             "method": "get",
             "path": "/market-information/us/most-actives"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "bytes32"
@@ -1555,7 +1552,7 @@
             "method": "get",
             "path": "/market-information/us/most-gainers"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "bytes32"
@@ -1574,7 +1571,7 @@
             "method": "get",
             "path": "/market-information/us/most-losers"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "bytes32"
@@ -1593,7 +1590,7 @@
             "method": "get",
             "path": "/market-information/us/sector-performance"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "bytes32"
@@ -1612,7 +1609,7 @@
             "method": "get",
             "path": "/marketstatus"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "bytes32"
@@ -1631,7 +1628,7 @@
             "method": "get",
             "path": "/search/market/{market}/{key}"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "bytes32"
@@ -1648,7 +1645,7 @@
                 "name": "limit"
               },
               "value": "1"
-            }   
+            }
           ],
           "parameters": [
             {
@@ -1673,7 +1670,7 @@
             "method": "get",
             "path": "/search/country/{key}"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "bytes32"
@@ -1690,7 +1687,7 @@
                 "name": "limit"
               },
               "value": "1"
-            }   
+            }
           ],
           "parameters": [
             {
@@ -1708,7 +1705,7 @@
             "method": "get",
             "path": "/detail/country/{country_code}"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "bytes32"
@@ -1735,7 +1732,7 @@
             "method": "get",
             "path": "/search/currency/{key}"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "bytes32"
@@ -1752,7 +1749,7 @@
                 "name": "limit"
               },
               "value": "1"
-            }   
+            }
           ],
           "parameters": [
             {
@@ -1770,7 +1767,7 @@
             "method": "get",
             "path": "/detail/currency/{symbol}"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "bytes32"
@@ -1797,7 +1794,7 @@
             "method": "get",
             "path": "/search/cryptocurrency/{key}"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "bytes32"
@@ -1814,7 +1811,7 @@
                 "name": "limit"
               },
               "value": "1"
-            }   
+            }
           ],
           "parameters": [
             {
@@ -1832,7 +1829,7 @@
             "method": "get",
             "path": "/detail/cryptocurrency/{key}"
           },
-           "reservedParameters": [
+          "reservedParameters": [
             {
               "name": "_type",
               "fixed": "bool"
@@ -1860,187 +1857,187 @@
     "request": [
       {
         "endpointId": "0xe1da7948e4dd95c04b2aaa10f4de115e67d9e109ce618750a3d8111b855a5ee5",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/last/stock/{symbol}"
       },
       {
         "endpointId": "0x875e82c0555b0ac8c6d60b3761506c0dea6869f132041252261c08c52b0ed56a",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/last/trade/stock/{symbol}"
       },
       {
         "endpointId": "0xc0a751beefe793df0e4eae43cd9998b35fb6526bc33a17bdd6e8d52bffab14c9",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/history/stock/open-close"
       },
       {
         "endpointId": "0x2de5dc5780f9d13bc0ee286d0873f1acaae48ba7cba5c2eb3dba72acc66b4018",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/history/stock/all"
       },
       {
         "endpointId": "0x3c84c831694830de6d64b336079b76660f16a8458d6790c06d01e3fa3ddede1f",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/agg/stock/{symbol}/{multiply}/{time}/{from}/{to}"
       },
       {
         "endpointId": "0x7ebf803655fe8939d52fcfa18b5714c7d58c94399348f45070cde7871023d615",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/last/forex/{symbol}"
       },
       {
         "endpointId": "0x5b73d03e740dcca87e6aa93cfbe440a840fd0920ae4ebe45be383db6d1c362d6",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/history/ticks/forex/{symbol}/{date}"
       },
       {
         "endpointId": "0x6704fdb6dfb37149ca88e152b5d1d7ae27c13a56aec46f374c7849ecca89f02b",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/agg/forex/{symbol}/{multiply}/{time}/{from}/{to}"
       },
       {
         "endpointId": "0x908bb1f2ba6922d8397bbd51175d657c0a022e33cbc5e90875008003fcea07d2",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/last/crypto/{symbol}"
       },
       {
         "endpointId": "0xb2c029702cf42522edde8a26681d106547684f33f79708954002ca24d9b791e1",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/last/crypto/detailed/{symbol}"
       },
       {
         "endpointId": "0x61595b039ae420f84fecce27786ff2952bdc2ba37c52408300d153961a30de75",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/agg/crypto/{symbol}/{multiply}/{time}/{from}/{to}"
       },
       {
         "endpointId": "0x2286a4da51190843247341473501235c0718354eab12cd66a06514fd45bcd0ce",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/depth/crypto/{symbol}"
       },
       {
         "endpointId": "0xd4d76a6f65418ee1b8ee15761035f3da8a7bef513e5012b1ca5ad0193953d961",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/history/crypto/depth/{symbol}/{from}/{to}"
       },
       {
         "endpointId": "0x9da3aa80c69a1d4473de169d2c9c34e849ae4368cd360ff669241bf7f8c38744",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/news/market/{symbol}"
       },
       {
         "endpointId": "0xc04a60d0e6073553f1c1d492d5022bfa3360f546dfa1f0baf9bcc6a9c4f91fc2",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/economic-calendar"
       },
       {
         "endpointId": "0x28a2e01b788cef211955c7ddd6e52fbba74128c23b5d7dfcf2999d1d34e4a040",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/cash-flow-statement/{symbol}"
       },
       {
         "endpointId": "0x86a8f95833daa9a02aa42611347da29174eaf7bab3ee9a6c5a93d385c77aa1a3",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/balance-sheet-statements/{symbol}"
       },
       {
         "endpointId": "0x32e2a95fa41fe82e49f955f349ad2defdccba2905855b92eed1016768976231f",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/income-statement/{symbol}"
       },
       {
         "endpointId": "0x0168c754f4d2e4dd434a1b079a1a03dca205d44fb70de54d054d1a00b55a3e47",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/detail/stock/{symbol}"
       },
       {
         "endpointId": "0xb529b9ee59c200ca3e600c7af0f4cfe59532cf59767f2399b259f9e3625d4ef7",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/funds/institutional-holder/{symbol}"
       },
       {
         "endpointId": "0x9025c2b5b6324b985aecdaad4045b8b565fba662db1e096bbe374bea2df72a8b",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/funds/mutual-fund-holder/{symbol}"
       },
       {
         "endpointId": "0xd435e678241af0ff487626c339a1bdaba5c2ae0b86c10924512e1bc0c26cc972",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/funds/etf-holder/{symbol}"
       },
       {
         "endpointId": "0x274976a8c75bfa9386b790ce451c1fcd73e4d0558b33f5860cfa8b202d61fe42",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/funds/etf-sector-weightings/{symbol}"
       },
       {
         "endpointId": "0x1651d80da6f64851516ec5681423253608b8e98f122c2b9d9bb643ea61b93784",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/funds/rss-feed"
       },
       {
         "endpointId": "0x04053f573e9285c8cd29576b7a8d7c2996323803ba2c6b3cb7d2ffbaff7b38f0",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/technical-indicator/{type}/{time}/{symbol}"
       },
       {
         "endpointId": "0x6922b7960d5e8b3203d7246a3aeb53f2654d4a766188ac41f9ca78039c87bc53",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/market-information/us/most-actives"
       },
       {
         "endpointId": "0x4b7034236b6e75b230c2c4486d315f583c867cf523ddfb33f7e2789e9684b667",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/market-information/us/most-gainers"
       },
       {
         "endpointId": "0xf029eabda41d1b14285174adc5e4c2107a8a1e19ad78036263fc8bd86a6220cc",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/market-information/us/most-losers"
       },
       {
         "endpointId": "0x546183ec1c786e266a562da0c7e013eba3dd8b003d11691589e4beea5761173d",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/market-information/us/sector-performance"
       },
       {
         "endpointId": "0x65e3730730facd1158ad169e7075a567791eb7d0c9d095514b3e0b6593d064b9",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/marketstatus"
       },
       {
         "endpointId": "0xda1265ebd882a2e537c7570e464079ec9c5c7e6368a943a6b88fbb0bbc5bef4b",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/search/market/{market}/{key}"
       },
       {
         "endpointId": "0x6a462fde25d30b872cf7f7d3bfb5edf18452a1b1c1c11718733e9ec923bfaa52",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/search/country/{key}"
       },
       {
         "endpointId": "0x1b427ce8d2dd05780b764cb11f07fec5715af7b364ebadc60cb3aafaeddda3ae",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/detail/country/{country_code}"
       },
       {
         "endpointId": "0x3abf54e3f7cbd33dfeeaf5b9e468334694902434b603c6c9cb4df0771382ad23",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/search/currency/{key}"
       },
       {
         "endpointId": "0xb2300fb6b51dac5c4c06a6ea32991da3a1327765937cc98f5f2a85a00e744c3f",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/detail/currency/{symbol}"
       },
       {
         "endpointId": "0x433b7e0fb4e4d71afa5392017bfd0a776b6711578513ed2fce9fccde97eaa506",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/search/cryptocurrency/{key}"
       },
       {
         "endpointId": "0xcdba26c2cc95314649ece9f593c7f9b293e3af7334b0ff017b9ab78ef48c53fe",
-        "oisTitle": "finageois",
+        "oisTitle": "Finage",
         "endpointName": "/detail/cryptocurrency/{key}"
       }
     ]
@@ -2049,16 +2046,15 @@
     "nodeVersion": "0.1.0",
     "cloudProvider": "aws",
     "region": "us-east-1",
-    "stage": "starter-example",   
-    "providerIdShort": "ccfb3e3", 
+    "stage": "starter-example",
     "logFormat": "json",
-    "chains": [      
+    "chains": [
       {
         "id": "31",
         "type": "evm",
         "providers": [
           {
-            "name": "rsk-rpc",
+            "name": "my-provider",
             "url": "https://testnet.sovryn.app/rpc"
           }
         ],
@@ -2066,24 +2062,8 @@
           "Airnode": "0x1190a5e1F2AFe4C8128FD820A7AC85A95A9e6e3E",
           "Convenience": "0x48bC6ea02a1349Ff147f902C0700f42A54e51deD"
         },
-        "providerAdminForRecordCreation": "0xb1344f7794Dd1217EcA274F9dFaE62ecCE9e8273"
-      },
-      {
-        "id": "3",
-        "type": "evm",
-        "providers": [
-          {
-            "name": "infura-ropsten",
-            "url": "https://ropsten.infura.io/v3/a45f7f1b5bf94824b8364730f280c6c4"
-          }
-        ],
-        "contracts": {
-          "Airnode": "0xF8d32C3e53F7DA6e7CB82323f2cAB2159776b832",
-          "Convenience": "0x1552cF617711D6Da04E0EDC9e5C26eBbA08625ac"
-        },
-        "providerAdminForRecordCreation": "0xb1344f7794Dd1217EcA274F9dFaE62ecCE9e8273"
+        "providerAdminForRecordCreation": "0x07AfF9952354060564a107c4e78c3c7b74c35fae"
       }
-     
     ]
   },
   "id": "981d57c2-a004-4526-99da-1b04608fb463"

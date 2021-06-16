@@ -4,7 +4,7 @@ const airnodeAdmin = require('@api3/airnode-admin');
 const evm = require('../src/evm');
 const parameters = require('../src/parameters');
 
-async function main() {
+async function main(endpoiintId) {
   const airnode = await evm.getAirnode();
   await airnodeAdmin.updateAuthorizers(airnode, parameters.providerId, parameters.endpointId, [
     ethers.constants.AddressZero,

@@ -4,7 +4,7 @@ const evm = require('../src/evm');
 const util = require('../src/util');
 
 async function main() {
-  const amount = '0.001'; // ETH
+  const amount = '0.005'; // ETH
   const wallet = await evm.getWallet();
   const designatedWalletAddress = util.readFromLogJson('Designated wallet address');
   const receipt = await wallet.sendTransaction({

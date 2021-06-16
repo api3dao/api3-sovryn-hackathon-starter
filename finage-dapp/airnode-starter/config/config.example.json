@@ -112,7 +112,6 @@
     "cloudProvider": "aws",
     "region": "us-east-1",
     "stage": "starter-example",
-    
     "logFormat": "json",
     "chains": [
       {
@@ -128,9 +127,9 @@
           "Airnode": "0x1190a5e1F2AFe4C8128FD820A7AC85A95A9e6e3E",
           "Convenience": "0x48bC6ea02a1349Ff147f902C0700f42A54e51deD"
         },
-        "providerAdminForRecordCreation": "0x24a3310411f83C987aF1E066703D612Dcfe2d0E9"
+        "providerAdminForRecordCreation": "0xb1344f7794Dd1217EcA274F9dFaE62ecCE9e8273"
       }
     ]
   },
-  "id": "981d57c2-a004-4526-99da-1b04608fb463"  
+  "id": "981d57c2-a004-4526-99da-1b04608fb463"
 }
