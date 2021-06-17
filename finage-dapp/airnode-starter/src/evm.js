@@ -3,8 +3,8 @@ const ethers = require('ethers');
 const airnodeProtocol = require('@api3/airnode-protocol');
 
 //temp fix
-let PROVIDER_URL = "https://ropsten.infura.io/v3/22ddca0affa34fc18af23168fa537fba";
-let MNEMONIC = "glad grid gym sponsor electric spring tuition twenty million neglect diagram latin";
+//let PROVIDER_URL = "https://ropsten.infura.io/v3/22ddca0affa34fc18af23168fa537fba";
+//let MNEMONIC = "glad grid gym sponsor electric spring tuition twenty million neglect diagram latin";
 
 // if (!process.env.PROVIDER_URL || process.env.PROVIDER_URL === 'https://ropsten.infura.io/v3/{YOUR_KEY}') {
 //   throw new Error('Missing provider URL in .env');

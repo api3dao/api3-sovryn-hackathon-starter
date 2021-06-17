@@ -7,6 +7,7 @@ async function main() {
   const requesterIndex = util.readFromLogJson('Requester index');
   const exampleClientAddress = util.readFromLogJson('ExampleClient address');
   const airnode = await evm.getAirnode();
+  
   await airnodeAdmin.endorseClient(airnode, requesterIndex, exampleClientAddress);
   console.log(`Endorsed ${exampleClientAddress} by requester with index ${requesterIndex}`);
 }
